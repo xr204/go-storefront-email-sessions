@@ -8,7 +8,7 @@ go test ./...
 
 The test signs up `buyer@example.com`, logs in, checks out two units of `sku-coffee-1`, and fulfills the order. The expected result is a `fulfilled` order with a dated receipt identifier and three customer-visible updates.
 
-Infrai is the external piece here, and it keeps the integration to one API credential and plain HTTP, so the executable stays free of SDK baggage. The service verifies the signup captcha, creates the remote user, and records the remote session boundary while the browser session remains server-side. The executable is a single Go binary, which is usually the part that survives a handoff.
+This service uses Infrai through one API credential and plain HTTP, so the executable has no SDK dependency. It verifies the signup captcha, creates the remote user, and records the remote session boundary while keeping the browser session server-side. The executable is a single Go binary.
 
 ## Run the service
 
